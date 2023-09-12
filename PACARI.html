@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>PACARI - Encriptação AES</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #ccc;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    label {
+      color: #fff;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body class="page">
+  <div class="container">
+    <h1>PACARI</h1>
+  
+    <label for="text">Texto:</label>
+    <input type="text" id="text" maxlength="1000"><br>
+  
+    <label for="password">Senha de acesso:</label>
+    <input type="password" id="password"><br>
+  
+    <button id="encryptButton" class="btn" aria-label="Encriptar Texto">Encriptar</button>
+    <button id="decryptButton" class="btn" aria-label="Decriptar Texto">Decriptar</button>
+  
+    <p>Resultado: <span id="result"></span></p>
+  </div>
+  <div class="container">
+    <!-- Seção do Projeto Pacari -->
+<section id="projeto-pacari">
+  <h2>Projeto Pacari</h2>
+  <p>
+    O "Pacari" é um projeto de código aberto dedicado à proteção de senhas compartilhadas com a simplicidade e segurança em mente. Inspirado nas línguas indígenas do Brasil, o nome "Pacari" significa "guardião" e reflete nosso compromisso em salvaguardar suas informações confidenciais.
+  </p>
+  
+  <h3>Recursos Principais</h3>
+  <ul>
+    <li>Criptografia Forte: O Pacari utiliza a criptografia AES para garantir que suas senhas compartilhadas permaneçam seguras e inacessíveis para qualquer pessoa não autorizada.</li>
+    <li>Compartilhamento Simples: Com uma interface de usuário intuitiva, o Pacari facilita o compartilhamento seguro de senhas com colegas, amigos ou membros da família.</li>
+    <li>Código Aberto: Nosso código-fonte está disponível no GitHub para que qualquer pessoa possa examiná-lo, contribuir com melhorias e personalizá-lo de acordo com suas necessidades.</li>
+    <li>Proteção Cultural: Como homenagem às comunidades indígenas do Brasil, o Pacari incorpora elementos culturais em sua identidade visual, lembrando-nos da importância da diversidade cultural e da preservação das línguas indígenas.</li>
+    <li>Gratuito para Todos: O Pacari é um projeto gratuito e está disponível para uso por indivíduos, organizações e comunidades que valorizam a segurança de suas senhas compartilhadas.</li>
+  </ul>
+  
+  <h3>Como Contribuir</h3>
+  <p>
+    - Sinta-se à vontade para contribuir com código, relatar problemas ou fazer sugestões no <a href="https://github.com/marcuspoli/pacari" target="_blank">repositório GitHub
+	</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script>
+    const encryptButton = document.getElementById('encryptButton');
+    const decryptButton = document.getElementById('decryptButton');
+    const resultSpan = document.getElementById('result');
+
+    document.getElementById('text').focus();
+    document.getElementById('text').select();
+
+    encryptButton.addEventListener('click', () => {
+      const text = document.getElementById('text').value;
+      const password = document.getElementById('password').value;
+      const encryptedText = encryptWithPassword(text, password);
+      resultSpan.textContent = encryptedText;
+      navigator.clipboard.writeText(encryptedText);
+      document.getElementById('text').focus();
+      document.getElementById('text').select();
+    });
+
+    decryptButton.addEventListener('click', () => {
+      const encryptedText = document.getElementById('text').value;
+      const password = document.getElementById('password').value;
+      const decryptedText = decryptWithPassword(encryptedText, password);
+      resultSpan.textContent = decryptedText;
+      navigator.clipboard.writeText(decryptedText);
+      document.getElementById('text').focus();
+      document.getElementById('text').select();
+    });
+
+    function encryptWithPassword(text, password) {
+      const encrypted = CryptoJS.AES.encrypt(text, password);
+      return encrypted.toString();
+    }
+
+    function decryptWithPassword(encryptedText, password) {
+      const decrypted = CryptoJS.AES.decrypt(encryptedText, password);
+      return decrypted.toString(CryptoJS.enc.Utf8);
+    }
+  </script>
+  
+
+</body>
+</html>
