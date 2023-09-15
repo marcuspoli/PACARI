@@ -16,9 +16,9 @@ Proteção Cultural: Como homenagem às comunidades indígenas do Brasil, o Paca
 Gratuito para Todos: O Pacari é um projeto gratuito e está disponível para uso por indivíduos, organizações e comunidades que valorizam a segurança de suas senhas compartilhadas.
 
 # Como Usar:
-1. Baixe o arquivo PACARI.html e o favicon.ico para o seu computador.
-2. Execute o PACARI.html clicando duas vezes no arquivo ou abrindo-o no seu navegador.
-3. Assegure-se de que a outra pessoa também tenha o PACARI.html e o favicon.ico e siga as mesmas etapas.
+1. Baixe a pasta PACARI da versão RELEASE em seu computador ou adicione o PACARI diretamente das extensões do CHROME.
+2. Execute o PACARI.html que está dentro da pasta POPUP.
+3. Assegure-se de que a outra pessoa também tenha o PACARI localmente ou através do plugin do CHROME.
 4. Combine com a outra pessoa uma palavra-chave que será usada para criptografar e descriptografar mensagens.
 5. No Pacari, preencha o campo "Texto" com a mensagem que deseja criptografar e o campo "Senha de Acesso" com a palavra-chave combinada.
 6. Clique em "Encriptar" quando desejar enviar a mensagem criptografada ou em "Decriptar" quando receber uma mensagem criptografada.
