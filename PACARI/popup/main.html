@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="homem16.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>PACARI - Encriptação AES</title>
+</head>
+
+<body class="page">
+  <div class="container">
+  <img src="homem64.ico" width="64" height="64" style="vertical-align:middle">
+    <h1>PACARI - Encriptação AES</h1>
+  
+    <label for="text">Texto:</label>
+    <input type="text" id="text" maxlength="1000"><br>
+  
+    <label for="password">Senha de acesso:</label>
+    <input type="password" id="password"><br>
+  
+    <button id="encryptButton" class="btn" aria-label="Encriptar Texto">Encriptar</button>
+    <button id="decryptButton" class="btn" aria-label="Decriptar Texto">Decriptar</button>
+  
+    <p>Resultado: <span id="result"></span></p>
+	<br>
+	<div class="footer">
+      <p class="credit">github.com/marcuspoli/pacari</p>&nbsp; &nbsp;
+      <p class="credit">Indígena ícones por Freepik - Flaticon</p>
+    </div>
+
+  </div> 
+  <script src="main.js"></script>
+  <script src="crypto-js.min.js"></script>
+
+</body>
+</html>
